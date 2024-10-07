@@ -2,8 +2,8 @@ import { Container } from "@mui/material";
 import Home from "./Home";
 import NavBar from "../ui/NavBar";
 import About from "./About";
-import Portfolio from "./portfolio";
 import Contact from "./Contact";
+import Projects from "./Projects";
 
 function AppLayout() {
   return (
@@ -15,7 +15,7 @@ function AppLayout() {
       <NavBar />
       <Home />
       <About />
-      <Portfolio />
+      <Projects />
       <Contact />
     </Container>
   );

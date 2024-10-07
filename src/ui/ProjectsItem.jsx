@@ -1,6 +1,6 @@
 import { Box, Paper } from "@mui/material";
 
-function PortfolioItem({ spanLength }) {
+function ProjectsItem({ spanLength }) {
   return (
     <Box
       className={`h-48 lg:h-full row-span-${spanLength} rounded-lg bg-transparent`}
@@ -10,4 +10,4 @@ function PortfolioItem({ spanLength }) {
   );
 }
 
-export default PortfolioItem;
+export default ProjectsItem;

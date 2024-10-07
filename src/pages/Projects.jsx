@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import PortfolioItem from "../ui/PortfolioItem";
+import ProjectsItem from "../ui/ProjectsItem";
 
-function Portfolio() {
+function Projects() {
   return (
     <Box className="">
       <Box className="flex flex-col items-center space-y-12 px-4 py-8 capitalize">
@@ -22,17 +22,17 @@ function Portfolio() {
         </Typography>
       </Box>
       <Box className="min-h-screen gap-3 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
-        <PortfolioItem spanLength={2} />
-        <PortfolioItem />
-        <PortfolioItem />
-        <PortfolioItem spanLength={2} />
-        <PortfolioItem />
-        <PortfolioItem spanLength={2} />
-        <PortfolioItem spanLength={2} />
-        <PortfolioItem />
+        <ProjectsItem spanLength={2} />
+        <ProjectsItem />
+        <ProjectsItem />
+        <ProjectsItem spanLength={2} />
+        <ProjectsItem />
+        <ProjectsItem spanLength={2} />
+        <ProjectsItem spanLength={2} />
+        <ProjectsItem />
       </Box>
     </Box>
   );
 }
 
-export default Portfolio;
+export default Projects;
