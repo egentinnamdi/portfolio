@@ -1,5 +1,6 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import Logo from "./Logo";
+import { GitHub, LinkedIn, WhatsApp } from "@mui/icons-material";
 
 function Footer() {
   return (
@@ -14,11 +15,24 @@ function Footer() {
           crafting innovative solutions for your unique vision
         </Typography>
       </Box>
-      <Box>
+      <Box className="space-y-5">
         <Typography className="!font-thin capitalize">
           you may also find me on this platforms!
         </Typography>
-        <Stack direction="row" spacing={3}></Stack>
+        <Stack direction="row" spacing={3} className="justify-center">
+          <Link
+            href="https://www.linkedin.com/in/nnamdi-egenti-988146249"
+            target="_blank"
+          >
+            <LinkedIn />
+          </Link>
+          <Link href="https://wa.me/2348172843959" target="_blank">
+            <WhatsApp />
+          </Link>
+          <Link href="https://github.com/egentinnamdi" target="_blank">
+            <GitHub />
+          </Link>
+        </Stack>
       </Box>
     </Box>
   );

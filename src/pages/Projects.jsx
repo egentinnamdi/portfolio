@@ -21,7 +21,7 @@ function Projects() {
           friendly and memorable interactive experiences
         </Typography>
       </Box>
-      <Box className="min-h-screen gap-3 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
+      <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
         <ProjectsItem spanLength={2} />
         <ProjectsItem />
         <ProjectsItem />
