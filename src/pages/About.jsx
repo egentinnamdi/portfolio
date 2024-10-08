@@ -1,34 +1,38 @@
+import { DeveloperMode, DeveloperModeOutlined } from "@mui/icons-material";
 import { Box, Paper, Stack, Typography } from "@mui/material";
 
 function About() {
   return (
-    <Box className="min-h-[50vh] space-y-10 p-10">
+    <Box className="min-h-[75vh] space-y-5 p-10" id="about me">
       <Box className="flex justify-center">
         <Typography
           variant="h3"
           component="h2"
-          className="border-b-8 border-util !pb-5 text-center !font-light capitalize"
+          className="border-b-8 border-util !pb-5 text-center !text-4xl !font-light capitalize lg:!text-5xl"
         >
           about me
         </Typography>
       </Box>
-      <Box className="!min-h-96 justify-between gap-10 lg:flex">
+      <Box className="!min-h-[55vh] justify-between gap-10 space-y-6 lg:flex lg:space-y-0">
         <Box
           component="div"
-          className="flex flex-col items-center justify-center gap-10"
+          className="flex flex-col items-center justify-center gap-10 lg:w-2/4"
         >
-          <Typography variant="h1" className="!text-9xl !font-medium">
-            3+
+          <Typography
+            variant="h1"
+            className="!text-7xl !font-medium lg:!text-9xl"
+          >
+            1+
           </Typography>
           <Typography variant="h5" className="text-center uppercase">
             years working experience
           </Typography>
         </Box>
-        <Box className="flex flex-col items-center justify-center space-y-7 p-5">
+        <Box className="flex flex-col items-center justify-center space-y-10 p-5 lg:w-2/4">
           <Typography
             variant="body1"
             component="p"
-            className="text-justify !leading-loose lg:text-center"
+            className="text-justify !leading-loose !tracking-normal lg:!tracking-normal"
           >
             I'm a passionate, self-proclaimed designer who specializes in full
             stack development (React.js & Node.js). I am very enthusiastic about
@@ -38,11 +42,16 @@ function About() {
           </Typography>
           <Stack direction="row" spacing={5} className="h-36 w-full">
             <Paper
-              elevation={7}
+              elevation={10}
               component="div"
-              className="h-full w-1/3 !bg-transparent"
+              className="grid h-full w-1/3 place-items-center border !border-transparent p-5"
             >
-              hi
+              <DeveloperModeOutlined />
+              <Typography>frontend development</Typography>
+              <Typography variant="body1" component="p" className="">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas nec urna
+              </Typography>
             </Paper>
             <Paper
               elevation={7}

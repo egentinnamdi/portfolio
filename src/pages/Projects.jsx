@@ -5,14 +5,14 @@ import { useState } from "react";
 function Projects() {
   const [span] = useState(true);
   return (
-    <Box className="">
+    <Box className="" id="projects">
       <Box className="flex flex-col items-center space-y-12 px-4 py-8 capitalize">
         <Typography
           variant="h2"
           component="h2"
-          className="border-b-8 border-util pb-5 !font-light"
+          className="border-b-8 border-util pb-5 !text-4xl !font-light lg:!text-5xl"
         >
-          portfolio
+          projects
         </Typography>
         <Typography
           variant="body1"

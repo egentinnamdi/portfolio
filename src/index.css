@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 @layer components {
-  .active {
-    @apply !border-b !border-b-transparent !bg-transparent;
+  .current {
+    @apply !border-b-4 !border-b-transparent;
   }
 }

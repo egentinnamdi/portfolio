@@ -14,23 +14,18 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import Logo from "./Logo";
-const nav = ["home", "about me", "experience", "projects", "blog", "contact"];
+import { NavHashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
+const nav = ["home", "about me", "experience", "projects", "contact"];
 function NavBar() {
   const [open, setOpen] = useState(false);
-  const [applyClass, setApplyClass] = useState(false);
   const theme = useTheme();
   const width = useMediaQuery(theme.breakpoints.down("lg"));
+  const [current, setCurrent] = useState(false);
 
-  function handleClick(e, item) {
-    if (e.target.id === item) {
-      setApplyClass((prev) => !prev);
-    }
-    console.log(applyClass, e.target.id, item);
-  }
   return (
     <Box>
       <AppBar position="fixed" className="min-h-[10vh] !bg-primary">
-        <Toolbar className="h-full justify-between p-3 lg:justify-around">
+        <Toolbar className="h-full justify-between py-7 lg:justify-around">
           <Logo />
           {width ? (
             <IconButton onClick={() => setOpen((prev) => !prev)}>
@@ -39,14 +34,14 @@ function NavBar() {
           ) : (
             <Box className="flex justify-between lg:w-2/4">
               {nav.map((item) => (
-                <Button
-                  id={item}
+                <NavHashLink
+                  smooth
+                  to={`/#${item}`}
                   key={item}
-                  className={` ${applyClass ? "border-b border-transparent !bg-transparent !capitalize" : ""}!capitalize lg:!text-lg`}
-                  onClick={(e) => handleClick(e, item)}
+                  className={`p-4 !capitalize lg:!text-lg ${current ? "current" : ""}`}
                 >
-                  {item}
-                </Button>
+                  <span onClick={() => setCurrent(true)}>{item}</span>
+                </NavHashLink>
               ))}
             </Box>
           )}
@@ -62,9 +57,15 @@ function NavBar() {
       >
         <List component="ul">
           {nav.map((item) => (
-            <ListItemButton key={item} className="!p-4 font-light capitalize">
-              {item}
-            </ListItemButton>
+            <NavHashLink to={`#${item}`}>
+              <ListItemButton
+                onClick={() => setOpen(false)}
+                key={item}
+                className="!p-4 font-light capitalize"
+              >
+                {item}
+              </ListItemButton>
+            </NavHashLink>
           ))}
         </List>
       </Drawer>

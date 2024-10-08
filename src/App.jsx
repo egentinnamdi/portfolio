@@ -4,6 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import AppLayout from "./pages/AppLayout";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const theme = createTheme({
@@ -48,9 +49,18 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box component="div" className="bg-primary">
-        <AppLayout />;
-      </Box>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Box component="div" className="bg-primary">
+                <AppLayout />;
+              </Box>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

@@ -22,12 +22,12 @@ const details = [
 
 function Contact({ navScroll }) {
   return (
-    <Box className="min-h-[50vh] space-y-14 p-4">
+    <Box className="min-h-[50vh] space-y-14 p-4" id="contact">
       <Box className="flex flex-col items-center space-y-10 capitalize">
         <Typography
           variant="h2"
           component="h2"
-          className="border-b-8 border-util pb-5 !font-light"
+          className="border-b-8 border-util pb-5 !text-4xl !font-light lg:!text-5xl"
         >
           contact me
         </Typography>
@@ -53,7 +53,7 @@ function Contact({ navScroll }) {
           <Typography
             variant="h2"
             component="h3"
-            className="font-light capitalize"
+            className="text-center !text-4xl font-light capitalize lg:text-left lg:!text-5xl"
           >
             get in touch
           </Typography>

@@ -34,6 +34,12 @@ function Footer() {
           </Link>
         </Stack>
       </Box>
+      <Box
+        component="footer"
+        className="grid h-16 w-full place-items-center text-center text-lg capitalize text-white"
+      >
+        &copy; {new Date().getFullYear()} FlexCodes. all rights reserved
+      </Box>
     </Box>
   );
 }

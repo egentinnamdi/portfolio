@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Projects from "./Projects";
 import { useRef } from "react";
 import Message from "../ui/Message";
+import Experience from "./Experience";
 
 function AppLayout() {
   const navScroll = useRef(null);
@@ -20,6 +21,7 @@ function AppLayout() {
       <NavBar />
       <Home navScroll={navScroll} />
       <About />
+      <Experience />
       <Projects />
       <Contact navScroll={navScroll} />
     </Container>

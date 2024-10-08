@@ -5,7 +5,7 @@ function ProjectsItem({ span }) {
   return (
     <Paper
       elevation={10}
-      className={`h-48 lg:h-full ${span ? "row-span-2" : ""} flex flex-col !rounded-xl border-b border-b-transparent py-3`}
+      className={`min-h-48 lg:h-full ${span ? "row-span-2" : ""} flex flex-col !rounded-xl border-b border-b-transparent py-3`}
     >
       <Box className="h-3/4">
         <img
@@ -19,7 +19,7 @@ function ProjectsItem({ span }) {
         <Typography
           variant="h4"
           component="h3"
-          className="relative flex justify-between pt-2"
+          className="relative flex justify-between pt-2 !text-2xl lg:!text-3xl"
         >
           vpn app ui design
           <Fab>

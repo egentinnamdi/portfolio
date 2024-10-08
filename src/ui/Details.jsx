@@ -8,7 +8,9 @@ function Details({ item }) {
         <Typography variant="body1" className="!font-thin">
           {item.title}
         </Typography>
-        <Typography variant="h6">{item.value}</Typography>
+        <Typography variant="h6" className="!text-base lg:!text-xl">
+          {item.value}
+        </Typography>
       </Box>
     </Stack>
   );
