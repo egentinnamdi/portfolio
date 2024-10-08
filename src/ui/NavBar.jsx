@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 import Logo from "./Logo";
 import { NavHashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
-const nav = ["home", "about me", "experience", "projects", "contact"];
+const nav = ["home", "about me", "experience", "projects", "blog", "contact"];
 function NavBar() {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
@@ -38,7 +38,7 @@ function NavBar() {
                   smooth
                   to={`/#${item}`}
                   key={item}
-                  className={`p-4 !capitalize lg:!text-lg ${current ? "current" : ""}`}
+                  className={`p-4 !font-light !capitalize lg:!text-xl ${current ? "current" : ""}`}
                 >
                   <span onClick={() => setCurrent(true)}>{item}</span>
                 </NavHashLink>

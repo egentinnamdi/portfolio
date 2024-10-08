@@ -63,7 +63,7 @@ function Home({ navScroll }) {
           }}
         >
           full stack{" "}
-          <span className="rounded-b-md border-b-8 border-text pb-3">
+          <span className="rounded-b-md border-b-8 border-util pb-3">
             Developer
           </span>
         </Typography>
