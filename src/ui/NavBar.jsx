@@ -17,8 +17,16 @@ import Logo from "./Logo";
 const nav = ["home", "about me", "experience", "projects", "blog", "contact"];
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const [applyClass, setApplyClass] = useState(false);
   const theme = useTheme();
   const width = useMediaQuery(theme.breakpoints.down("lg"));
+
+  function handleClick(e, item) {
+    if (e.target.id === item) {
+      setApplyClass((prev) => !prev);
+    }
+    console.log(applyClass, e.target.id, item);
+  }
   return (
     <Box>
       <AppBar position="fixed" className="min-h-[10vh] !bg-primary">
@@ -31,7 +39,12 @@ function NavBar() {
           ) : (
             <Box className="flex justify-between lg:w-2/4">
               {nav.map((item) => (
-                <Button key={item} className="!capitalize lg:!text-lg">
+                <Button
+                  id={item}
+                  key={item}
+                  className={` ${applyClass ? "border-b border-transparent !bg-transparent !capitalize" : ""}!capitalize lg:!text-lg`}
+                  onClick={(e) => handleClick(e, item)}
+                >
                   {item}
                 </Button>
               ))}

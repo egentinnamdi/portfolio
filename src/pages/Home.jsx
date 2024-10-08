@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
-function Home() {
+function Home({ navScroll }) {
   const random = Math.round(Math.random() * 100);
   const [position] = useState(random);
   return (
@@ -75,7 +75,15 @@ function Home() {
           love it as if it was something new.
         </Typography>
         <Stack spacing={4} direction="row">
-          <Button variant="contained" className="!bg-text !py-3">
+          <Button
+            variant="contained"
+            className="!bg-text !py-3"
+            onClick={() =>
+              navScroll.current.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
+          >
             book a meeting
           </Button>
           <Button variant="outlined" className="!border-text !py-3">

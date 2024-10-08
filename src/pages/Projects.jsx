@@ -1,7 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import ProjectsItem from "../ui/ProjectsItem";
+import { useState } from "react";
 
 function Projects() {
+  const [span] = useState(true);
   return (
     <Box className="">
       <Box className="flex flex-col items-center space-y-12 px-4 py-8 capitalize">
@@ -22,13 +24,13 @@ function Projects() {
         </Typography>
       </Box>
       <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
-        <ProjectsItem spanLength={2} />
+        <ProjectsItem span={span} />
         <ProjectsItem />
         <ProjectsItem />
-        <ProjectsItem spanLength={2} />
+        <ProjectsItem span={span} />
         <ProjectsItem />
-        <ProjectsItem spanLength={2} />
-        <ProjectsItem spanLength={2} />
+        <ProjectsItem span={span} />
+        <ProjectsItem span={span} />
         <ProjectsItem />
       </Box>
     </Box>

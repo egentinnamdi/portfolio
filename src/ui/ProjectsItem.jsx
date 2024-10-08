@@ -1,10 +1,11 @@
+import { ArrowOutwardSharp } from "@mui/icons-material";
 import { Box, Fab, Paper, Typography } from "@mui/material";
 
-function ProjectsItem({ spanLength }) {
+function ProjectsItem({ span }) {
   return (
     <Paper
       elevation={10}
-      className={`h-48 lg:h-full row-span-${spanLength} flex flex-col !rounded-xl border-b border-b-transparent py-3`}
+      className={`h-48 lg:h-full ${span ? "row-span-2" : ""} flex flex-col !rounded-xl border-b border-b-transparent py-3`}
     >
       <Box className="h-3/4">
         <img
@@ -21,7 +22,9 @@ function ProjectsItem({ spanLength }) {
           className="relative flex justify-between pt-2"
         >
           vpn app ui design
-          <Fab />
+          <Fab>
+            <ArrowOutwardSharp />
+          </Fab>
         </Typography>
         <Typography variant="body1" component="p" className="!font-light">
           vpm app ui design

@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import Footer from "../ui/Footer";
 import { ChatBubble, LocationCityOutlined, Phone } from "@mui/icons-material";
 import Details from "../ui/Details";
@@ -28,7 +20,7 @@ const details = [
   },
 ];
 
-function Contact() {
+function Contact({ navScroll }) {
   return (
     <Box className="min-h-[50vh] space-y-14 p-4">
       <Box className="flex flex-col items-center space-y-10 capitalize">
@@ -50,7 +42,7 @@ function Contact() {
           lg: "row",
         }}
       >
-        <Box className="space-y-7 lg:w-2/4 lg:px-20">
+        <Box className="space-y-7 lg:w-2/4 lg:px-20" ref={navScroll}>
           <Typography
             className="text-center uppercase lg:text-left"
             variant="body1"
