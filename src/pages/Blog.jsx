@@ -1,9 +1,14 @@
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Skeleton, Stack } from "@mui/material";
 import Header from "../ui/Header";
 import BlogPost from "../ui/BlogPost";
-import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import getPosts from "../services/supabase";
 
 function Blog() {
+  const { data } = useQuery({
+    queryKey: ["fetchPosts"],
+    queryFn: () => getPosts(),
+  });
   return (
     <Box class="flex min-h-[50vh] flex-col space-y-16" id="blog">
       <Header text="blog" />
@@ -12,9 +17,33 @@ function Blog() {
         spacing={5}
         direction={{ lg: "row", xs: "column" }}
       >
-        <BlogPost />
-        <BlogPost />
-        <BlogPost />
+        {data ? (
+          data?.map((item) => <BlogPost item={item} />)
+        ) : (
+          <>
+            <Skeleton
+              variant="rounded"
+              className="lg:!w-1/3"
+              width="100%"
+              animation="wave"
+              height="45vh"
+            />
+            <Skeleton
+              variant="rounded"
+              className="lg:!w-1/3"
+              width="100%"
+              animation="wave"
+              height="45vh"
+            />
+            <Skeleton
+              variant="rounded"
+              className="lg:!w-1/3"
+              width="100%"
+              animation="wave"
+              height="45vh"
+            />
+          </>
+        )}
       </Stack>
       <Button
         target="_blank"

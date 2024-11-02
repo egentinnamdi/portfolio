@@ -2,6 +2,9 @@ import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import Footer from "../ui/Footer";
 import { ChatBubble, LocationCityOutlined, Phone } from "@mui/icons-material";
 import Details from "../ui/Details";
+import emailjs from "@emailjs/browser";
+import { useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
 const details = [
   {
     icon: <ChatBubble />,
@@ -21,7 +24,37 @@ const details = [
 ];
 
 function Contact({ navScroll }) {
-  // email;
+  const [submitting, setSubmitting] = useState(false);
+  const contactForm = useRef(null);
+  emailjs.init({
+    publicKey: "sIXzlA_mGeqf0lQXh",
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    const submitPromise = emailjs
+      .sendForm("service_9r196ri", "contact_form", this)
+      .finally(() => {
+        setSubmitting(false);
+        contactForm.current.reset();
+      });
+
+    toast.promise(submitPromise, {
+      loading: "Sending...",
+      success: "Email sent successfully...",
+      error: "There was an issue sending email...",
+    });
+  }
+
+  useEffect(function () {
+    contactForm.current.addEventListener("submit", handleSubmit);
+
+    return function () {
+      contactForm.current.removeEventListener("submit", handleSubmit);
+    };
+  }, []);
+
   return (
     <Box className="min-h-[50vh] space-y-14 p-4" id="contact">
       <Box className="flex flex-col items-center space-y-10 capitalize">
@@ -62,10 +95,15 @@ function Contact({ navScroll }) {
             <Details item={item} key={item.title} />
           ))}
         </Box>
-        <Box className="!placeholder:capitalize pt-14 capitalize lg:w-2/4">
+        <Box
+          ref={contactForm}
+          className="!placeholder:capitalize pt-14 capitalize lg:w-2/4"
+          component="form"
+        >
           <Grid container spacing={3}>
             <Grid item xs={12} lg={6}>
               <TextField
+                required
                 label="first name"
                 type="text"
                 name="firstName"
@@ -76,6 +114,7 @@ function Contact({ navScroll }) {
             <Grid item xs={12} lg={6}>
               <TextField
                 label="last name"
+                required
                 type="text"
                 name="lastName"
                 placeholder="last name"
@@ -85,6 +124,7 @@ function Contact({ navScroll }) {
             <Grid item xs={12} lg={6}>
               <TextField
                 label="email"
+                required
                 type="email"
                 name="email"
                 placeholder="email"
@@ -94,6 +134,7 @@ function Contact({ navScroll }) {
             <Grid item xs={12} lg={6}>
               <TextField
                 label="phone"
+                required
                 type="tel"
                 name="phone"
                 placeholder="phone no"
@@ -103,6 +144,7 @@ function Contact({ navScroll }) {
             <Grid item xs={12}>
               <TextField
                 multiline
+                required
                 rows={5}
                 label="message"
                 type="text"
@@ -113,6 +155,7 @@ function Contact({ navScroll }) {
             </Grid>
             <Grid item xs={12}>
               <Button
+                disabled={submitting ? true : false}
                 variant="contained"
                 type="submit"
                 className="w-full !bg-text !p-3 capitalize"

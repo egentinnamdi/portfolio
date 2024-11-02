@@ -5,8 +5,11 @@ import "@fontsource/roboto/700.css";
 import AppLayout from "./pages/AppLayout";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  const queryClient = new QueryClient();
   const theme = createTheme({
     palette: {
       mode: "dark",
@@ -49,18 +52,21 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Box component="div" className="bg-primary">
-                <AppLayout />;
-              </Box>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <Toaster position="bottom-center" gutter={5} />
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Box component="div" className="bg-primary">
+                  <AppLayout />;
+                </Box>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

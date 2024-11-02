@@ -14,12 +14,19 @@ import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { NavHashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 const nav = ["home", "about", "projects", "blog", "contact"];
+// const widths = {
+//   home: -10,
+//   about: 746,
+//   projects: 1546,
+//   blog: 3746,
+//   contact: 4163,
+// };
 const widths = {
   home: -10,
-  about: 930,
-  projects: 1690,
-  blog: 3940,
-  contact: 4482,
+  about: 639,
+  projects: 1239,
+  blog: 3439,
+  contact: 4163,
 };
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -50,16 +57,22 @@ function NavBar() {
             </IconButton>
           ) : (
             <Box className="flex justify-between lg:w-2/4">
-              {nav.map((item, index) => (
-                <NavHashLink
-                  smooth
-                  to={`/#${item}`}
-                  key={item}
-                  className={`rounded-b-sm border-b-0 border-text p-4 !font-light !capitalize lg:!text-xl ${scrollPosition > widths[item] && scrollPosition < widths[nav[index + 1]] ? "selected" : ""}`}
-                >
-                  <span>{item}</span>
-                </NavHashLink>
-              ))}
+              {nav.map((item, index) => {
+                const activeMenu =
+                  index + 1 === nav.length
+                    ? true
+                    : scrollPosition < widths[nav[index + 1]];
+                return (
+                  <NavHashLink
+                    smooth
+                    to={`/#${item}`}
+                    key={item}
+                    className={`rounded-b-sm border-b-0 border-text p-4 !font-light !capitalize lg:!text-xl ${scrollPosition >= widths[item] && activeMenu ? "selected" : ""}`}
+                  >
+                    <span>{item}</span>
+                  </NavHashLink>
+                );
+              })}
             </Box>
           )}
         </Toolbar>

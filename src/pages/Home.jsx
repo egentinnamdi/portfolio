@@ -40,7 +40,7 @@ function Home({ navScroll }) {
           sx={{
             fontSize: {
               xs: "1.3rem",
-              // lg: "3rem",
+              lg: "1.5rem",
             },
           }}
         >
