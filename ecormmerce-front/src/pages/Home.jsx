@@ -1,6 +1,49 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import Images from "../ui/Images";
 
+const positions = [
+  {
+    name: "react",
+    top: 25,
+    left: 15,
+  },
+  {
+    name: "nodejs",
+    top: 50,
+    left: 5,
+  },
+  {
+    name: "tailwind",
+    top: 10,
+    left: 15,
+  },
+  {
+    name: "mongo",
+    top: 42,
+    left: 20,
+  },
+  {
+    name: "git",
+    top: 12,
+    left: 75,
+  },
+  {
+    name: "javascript",
+    top: 30,
+    left: 80,
+  },
+  {
+    name: "typescript",
+    top: 45,
+    left: 85,
+  },
+  {
+    name: "express",
+    top: 35,
+    left: 2,
+  },
+];
+
 function Home({ navScroll }) {
   return (
     <Box
@@ -15,14 +58,9 @@ function Home({ navScroll }) {
             className="absolute z-10 h-full w-full object-cover object-top"
           />
           <Box className="absolute bottom-0 left-0 right-0 top-0">
-            <Images imgName="react" />
-            <Images imgName="nodejs" />
-            <Images imgName="tailwind" />
-            <Images imgName="mongo" />
-            <Images imgName="git" />
-            <Images imgName="javascript" />
-            <Images imgName="typescript" />
-            <Images imgName="express" />
+            {positions.map((item) => (
+              <Images imgName={item.name} left={item.left} top={item.top} />
+            ))}
           </Box>
         </Box>
       </Box>

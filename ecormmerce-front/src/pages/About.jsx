@@ -1,15 +1,37 @@
-import { DeveloperModeOutlined } from "@mui/icons-material";
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Header from "../ui/Header";
+import WorkArea from "../ui/WorkArea";
+import {
+  DeveloperModeOutlined,
+  PhoneAndroid,
+  Router,
+} from "@mui/icons-material";
+const aboutDetails = [
+  {
+    icon: <DeveloperModeOutlined fontSize="large" />,
+    title: "frontend",
+    text: "Bringing designs to life with clean code and an eye for aesthetics, using tools like React.js, Tailwind CSS, and Material UI to ensure responsive, user-friendly interfaces.",
+  },
+  {
+    icon: <Router fontSize="large" />,
+    title: "Backend",
+    text: "Building robust backend systems using Node.js, Express, and MongoDB, with a focus on security, scalability, and performance.",
+  },
+  {
+    icon: <PhoneAndroid fontSize="large" />,
+    title: "mobile app",
+    text: "Leveraging React Native to create cross-platform mobile applications that provide consistent user experiences across devices.",
+  },
+];
 
 function About() {
   return (
-    <Box className="min-h-[75vh] space-y-5 p-10" id="about">
+    <Box className="min-h-[75vh] space-y-5 lg:p-10" id="about">
       <Header text="about me" />
       <Box className="!min-h-[55vh] justify-between gap-10 space-y-6 lg:flex lg:space-y-0">
         <Box
           component="div"
-          className="flex flex-col items-center justify-center gap-10 lg:w-2/4"
+          className="flex flex-col items-center justify-center gap-10 lg:w-1/4"
         >
           <Typography
             variant="h1"
@@ -21,45 +43,32 @@ function About() {
             years working experience
           </Typography>
         </Box>
-        <Box className="flex flex-col items-center justify-center space-y-10 p-5 lg:w-2/4">
+        <Box className="flex flex-col items-center justify-center space-y-10 p-5 lg:w-3/4">
           <Typography
             variant="body1"
             component="p"
-            className="text-justify !leading-loose !tracking-normal lg:!tracking-normal"
+            className="text-justify !leading-loose !tracking-tighter lg:!tracking-normal"
           >
-            I'm a passionate, self-proclaimed designer who specializes in full
-            stack development (React.js & Node.js). I am very enthusiastic about
-            bringing the technical and visual aspects of digital products to
-            life. User experience, pixel perfect design, and writing clear,
-            readable, highly performant code matters to me.
+            I'm a dedicated and enthusiastic full-stack developer with over a
+            year of hands-on experience in creating dynamic and impactful
+            digital solutions. With expertise in both frontend and backend
+            technologies, including React.js and Node.js, Im passionate about
+            crafting seamless, high-performance applications that provide
+            excellent user experiences. Whether it's designing clean,
+            pixel-perfect interfaces or developing efficient, scalable backend
+            systems, my goal is to bridge the technical and visual aspects of
+            software development. I take pride in writing clean, maintainable
+            code that not only meets the highest standards of functionality but
+            also resonates with the end-users.
           </Typography>
-          <Stack direction="row" spacing={5} className="h-36 w-full">
-            <Paper
-              elevation={10}
-              component="div"
-              className="grid h-full w-1/3 place-items-center border !border-transparent p-5"
-            >
-              <DeveloperModeOutlined />
-              <Typography>frontend development</Typography>
-              <Typography variant="body1" component="p" className="">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas nec urna
-              </Typography>
-            </Paper>
-            <Paper
-              elevation={7}
-              component="div"
-              className="h-full w-1/3 !bg-transparent"
-            >
-              hi
-            </Paper>
-            <Paper
-              elevation={7}
-              component="div"
-              className="h-full w-1/3 !bg-transparent"
-            >
-              hi
-            </Paper>
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+            spacing={5}
+            className="w-full"
+          >
+            {aboutDetails.map((item) => (
+              <WorkArea key={item.title} item={item} />
+            ))}
           </Stack>
         </Box>
       </Box>
