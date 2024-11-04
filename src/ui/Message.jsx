@@ -1,6 +1,8 @@
 import {
   Box,
+  Button,
   Dialog,
+  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
@@ -33,6 +35,15 @@ function Message() {
             Nnamdi James
           </DialogContentText>
         </DialogContent>
+        <DialogActions className="flex !justify-center">
+          <Button
+            variant="contained"
+            onClick={() => setDialog((prev) => !prev)}
+            className="!bg-util !p-3 !font-medium !text-secondary"
+          >
+            imma see for myself🌚
+          </Button>
+        </DialogActions>
       </Box>
     </Dialog>
   );
