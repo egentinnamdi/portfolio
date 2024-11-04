@@ -69,7 +69,7 @@ function Home({ navScroll }) {
           xs: 4,
           lg: 7,
         }}
-        className="flex h-full flex-col items-start justify-center p-10 lg:w-2/4"
+        className="flex h-full flex-col items-start justify-center px-5 py-10 lg:w-2/4 lg:p-10"
       >
         <Typography
           variant="h5"
@@ -90,7 +90,7 @@ function Home({ navScroll }) {
           className="!font-medium capitalize"
           sx={{
             fontSize: {
-              xs: "1.7rem",
+              xs: "1.8rem",
               lg: "3rem",
             },
           }}
