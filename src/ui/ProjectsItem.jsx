@@ -1,7 +1,7 @@
 import { ArrowOutwardSharp } from "@mui/icons-material";
 import { Box, Fab, Paper, Typography } from "@mui/material";
 
-function ProjectsItem({ span }) {
+function ProjectsItem({ span, imgName }) {
   return (
     <Paper
       elevation={10}

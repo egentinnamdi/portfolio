@@ -25,7 +25,7 @@ function Projects() {
       </Box>
       <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
         <ProjectsItem span={span} />
-        <ProjectsItem />
+        <ProjectsItem imgName="weather" />
         <ProjectsItem />
         <ProjectsItem span={span} />
         <ProjectsItem />

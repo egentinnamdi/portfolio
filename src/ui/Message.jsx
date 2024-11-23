@@ -41,7 +41,7 @@ function Message() {
             onClick={() => setDialog((prev) => !prev)}
             className="!bg-util !p-3 !font-medium !text-secondary"
           >
-            imma see for myself🌚
+            okay
           </Button>
         </DialogActions>
       </Box>
