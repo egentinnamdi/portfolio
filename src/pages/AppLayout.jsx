@@ -18,7 +18,7 @@ function AppLayout() {
       maxWidth="xl"
       className="!min-h-screen space-y-20"
     >
-      <Message />
+      {/* <Message /> */}
       <NavBar />
       <Home navScroll={navScroll} />
       <About />

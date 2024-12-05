@@ -10,13 +10,13 @@ function BlogPost({ item }) {
       <a href={`https://flexcodesdigest.netlify.app/post/${id}`}>
         <Box className="relative !h-80">
           <img
-            src="/e-commerce.jpg"
+            src="/travel.jpg"
             alt="blog"
             className="h-full w-full rounded-xl object-cover"
           />
           <Paper
             elevation={15}
-            className={`!bg-primaryTrans hover:!bg-primaryTransDark absolute inset-0 flex !h-full flex-col items-center justify-center ${transition}`}
+            className={`absolute inset-0 flex !h-full flex-col items-center justify-center !bg-primaryTrans hover:!bg-primaryTransDark ${transition}`}
           >
             <Stack
               spacing={1}
@@ -25,7 +25,7 @@ function BlogPost({ item }) {
               <Typography
                 variant="body1"
                 component="p"
-                className="!font-medium !text-secondary"
+                className="!font-medium !text-util"
               >
                 {new Date(time).toDateString()}
               </Typography>
@@ -45,7 +45,7 @@ function BlogPost({ item }) {
               <Typography
                 variant="body1"
                 component="span"
-                className="!font-medium !text-secondary"
+                className="!font-medium !text-util"
               >
                 {author}
               </Typography>
