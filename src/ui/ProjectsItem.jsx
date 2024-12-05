@@ -17,7 +17,7 @@ function ProjectsItem({ span, item }) {
 
       <Box
         href={item.link}
-        className="flex h-1/4 w-full flex-col justify-center space-y-3 p-4 capitalize"
+        className="min-h-1/4 flex w-full flex-col justify-center space-y-3 p-4 capitalize"
       >
         <Typography
           variant="h4"
@@ -32,7 +32,7 @@ function ProjectsItem({ span, item }) {
         <Typography
           variant="body1"
           component="p"
-          className="text-justify !text-sm !font-light"
+          className="text-justify !text-sm !font-light lg:!leading-relaxed"
         >
           {item.description}
         </Typography>

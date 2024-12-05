@@ -16,7 +16,7 @@ const projects = [
   {
     projName: "gpt clone",
     link: "https://gpt-3-web-topaz.vercel.app/",
-    imgName: "something",
+    imgName: "gpt-clone",
     description:
       "This project is a responsive and dynamic web application inspired by the official GPT-3 website. This endeavor not only mirrors the sleek design of the original but also incorporates additional features",
   },
@@ -56,7 +56,8 @@ function Projects() {
           friendly and memorable interactive experiences
         </Typography>
       </Box>
-      <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0">
+      {/* <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:space-y-0"> */}
+      <Box className="!min-h-screen gap-10 space-y-5 lg:grid lg:!min-h-60 lg:grid-cols-3 lg:grid-rows-1 lg:space-y-0">
         {/* <ProjectsItem span={span} />
         <ProjectsItem imgName="weather" />
         <ProjectsItem />
