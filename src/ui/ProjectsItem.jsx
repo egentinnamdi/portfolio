@@ -1,11 +1,14 @@
 import { ArrowOutwardSharp } from "@mui/icons-material";
 import { Box, Fab, Paper, Typography } from "@mui/material";
 
-function ProjectsItem({ span, item }) {
+function ProjectsItem({ item }) {
   return (
     <Paper
       elevation={10}
-      className={`min-h-48 lg:h-full ${span ? "row-span-2" : ""} flex flex-col !rounded-xl border-b border-b-transparent py-3 !transition-all !duration-500 hover:scale-105`}
+      className="flex min-h-48 flex-col !rounded-xl border-b border-b-transparent py-3 !transition-all !duration-500 hover:scale-105 lg:h-full"
+      sx={{
+        gridRow: item?.span && "span 2",
+      }}
     >
       <Box className="h-72">
         <img

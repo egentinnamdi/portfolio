@@ -10,6 +10,7 @@ const projects = [
     projName: "liquor haven",
     link: "https://liquor-haven.vercel.app/",
     imgName: "e-commerce",
+    span: true,
     description:
       "This project is an e commerce site. It offers a user-friendly interface with easy navigation and a section for product details.. Built with modern web technologies, the site is fully responsive and provides a smooth experience across all devices.",
   },
@@ -27,16 +28,17 @@ const projects = [
     description:
       "This project is a weather web application and itis a simple, intuitive weather application that provides real-time weather updates for different locations. It features a clean interface, allowing users to easily search for and view current weather conditions, including temperature, humidity, and forecasts.",
   },
-  // {
-  //   projName: "something",
-  //   link: "something",
-  //   imgName: "something",
-  //   description: "something",
-  // },
+  {
+    projName: "unity finance",
+    link: "https://www.unityfinanceonline.com/",
+    imgName: "unity",
+    span: true,
+    description:
+      "Unity Finance Online is a financial services platform I contributed to, designed to simplify and enhance financial management for users. My work focused on developing robust features like loan facilitation, finance management, and investment planning tools. Leveraging modern technologies, I ensured a seamless user experience, transparent processes, and scalable solutions, empowering clients to achieve their financial goals effectively. This project reflects my ability to build intuitive and impactful web applications tailored to real-world needs.",
+  },
 ];
 
 function Projects() {
-  const [span] = useState(true);
   return (
     <Box className="" id="projects">
       <Box className="flex flex-col items-center space-y-12 px-4 py-8 capitalize">
