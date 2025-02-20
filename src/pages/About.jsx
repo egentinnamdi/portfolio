@@ -37,7 +37,7 @@ function About() {
             variant="h1"
             className="!text-7xl !font-medium lg:!text-9xl"
           >
-            1+
+            1.5+
           </Typography>
           <Typography variant="h5" className="text-center uppercase">
             years working experience

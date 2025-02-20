@@ -42,6 +42,11 @@ const positions = [
     top: 35,
     left: 2,
   },
+  {
+    name: "next",
+    top: 41,
+    left: 68,
+  },
 ];
 
 function Home({ navScroll }) {
